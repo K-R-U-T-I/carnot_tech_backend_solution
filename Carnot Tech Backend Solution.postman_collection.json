@@ -1,0 +1,334 @@
+{
+	"info": {
+		"_postman_id": "4957bb2c-29f4-4332-b553-55fec29e0ec3",
+		"name": "Carnot Tech Backend Solution",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28694117"
+	},
+	"item": [
+		{
+			"name": "Get Device’s Latest Info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/latest_info/25029",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"latest_info",
+						"25029"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/api/latest_info/<int:device_id>",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/latest_info/25029",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"latest_info",
+								"25029"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.6 Python/3.8.10"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 22 Jul 2023 12:52:45 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "376"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"device_id\": 25029,\n    \"latest_info\": {\n        \"end_latitude\": \"27.8779354095459\",\n        \"end_longitude\": \"76.06095886230469\",\n        \"end_time_stamp\": \"2021-10-23 14:25:25+00:00\",\n        \"latitude\": \"27.8779354095459\",\n        \"longitude\": \"76.06095886230469\",\n        \"start_latitude\": \"27.88550567626953\",\n        \"start_longitude\": \"76.26920318603516\",\n        \"start_time_stamp\": \"2021-10-23 12:29:56+00:00\",\n        \"time_stamp\": \"2021-10-23 14:25:25+00:00\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Device’s start location & end location",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/start_end_location/25029",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"start_end_location",
+						"25029"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/api/start_end_location/<int:device_id>",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/start_end_location/25029",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"start_end_location",
+								"25029"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.6 Python/3.8.10"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 22 Jul 2023 12:53:26 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "127"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"device_id\": 25029,\n    \"end_location\": [\n        27.8779354095459,\n        76.06095886230469\n    ],\n    \"start_location\": [\n        27.88550567626953,\n        76.26920318603516\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Location Points",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/all_location_points?device_id=25029&start_time=2021-10-23T14:07:52Z&end_time=2021-10-23T14:08:06Z",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"all_location_points"
+					],
+					"query": [
+						{
+							"key": "device_id",
+							"value": "25029"
+						},
+						{
+							"key": "start_time",
+							"value": "2021-10-23T14:07:52Z"
+						},
+						{
+							"key": "end_time",
+							"value": "2021-10-23T14:08:06Z"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/api/all_location_points",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/all_location_points?device_id=25029&start_time=2021-10-23T14:07:52Z&end_time=2021-10-23T14:08:06Z",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"all_location_points"
+							],
+							"query": [
+								{
+									"key": "device_id",
+									"value": "25029"
+								},
+								{
+									"key": "start_time",
+									"value": "2021-10-23T14:07:52Z"
+								},
+								{
+									"key": "end_time",
+									"value": "2021-10-23T14:08:06Z"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.6 Python/3.8.10"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 22 Jul 2023 13:15:39 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "856"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"device_id\": 25029,\n    \"location_points\": [\n        {\n            \"latitude\": 27.87795829772949,\n            \"longitude\": 76.06095886230469,\n            \"time_stamp\": \"2021-10-23 14:08:06+00:00\"\n        },\n        {\n            \"latitude\": 27.87795829772949,\n            \"longitude\": 76.06095886230469,\n            \"time_stamp\": \"2021-10-23 14:08:04+00:00\"\n        },\n        {\n            \"latitude\": 27.87795829772949,\n            \"longitude\": 76.06095886230469,\n            \"time_stamp\": \"2021-10-23 14:08:02+00:00\"\n        },\n        {\n            \"latitude\": 27.87795829772949,\n            \"longitude\": 76.06095886230469,\n            \"time_stamp\": \"2021-10-23 14:08:00+00:00\"\n        },\n        {\n            \"latitude\": 27.87795829772949,\n            \"longitude\": 76.06095886230469,\n            \"time_stamp\": \"2021-10-23 14:07:58+00:00\"\n        },\n        {\n            \"latitude\": 27.87795829772949,\n            \"longitude\": 76.06095886230469,\n            \"time_stamp\": \"2021-10-23 14:07:56+00:00\"\n        },\n        {\n            \"latitude\": 27.87795829772949,\n            \"longitude\": 76.06095886230469,\n            \"time_stamp\": \"2021-10-23 14:07:54+00:00\"\n        },\n        {\n            \"latitude\": 27.87795829772949,\n            \"longitude\": 76.06095886230469,\n            \"time_stamp\": \"2021-10-23 14:07:52+00:00\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get all data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/all_data",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"all_data"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/api/all_data",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/all_data",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"all_data"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.6 Python/3.8.10"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 22 Jul 2023 15:29:39 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1961"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"6888\": {\n        \"end_latitude\": \"19.73518943786621\",\n        \"end_longitude\": \"76.18452453613281\",\n        \"end_time_stamp\": \"2021-10-23 13:28:00+00:00\",\n        \"latitude\": \"19.73518943786621\",\n        \"longitude\": \"76.18452453613281\",\n        \"start_latitude\": \"19.7290096282959\",\n        \"start_longitude\": \"76.20492553710938\",\n        \"start_time_stamp\": \"2021-10-23 04:55:53+00:00\",\n        \"time_stamp\": \"2021-10-23 13:28:00+00:00\"\n    },\n    \"20984\": {\n        \"end_latitude\": \"21.61506080627441\",\n        \"end_longitude\": \"78.43673706054688\",\n        \"end_time_stamp\": \"2021-10-23 14:29:32+00:00\",\n        \"latitude\": \"21.61506080627441\",\n        \"longitude\": \"78.43673706054688\",\n        \"start_latitude\": \"21.61501693725586\",\n        \"start_longitude\": \"78.43660736083984\",\n        \"start_time_stamp\": \"2021-10-23 12:29:53+00:00\",\n        \"time_stamp\": \"2021-10-23 14:29:32+00:00\"\n    },\n    \"24809\": {\n        \"end_latitude\": \"18.990556716918945\",\n        \"end_longitude\": \"77.75897979736328\",\n        \"end_time_stamp\": \"2021-10-23 14:29:04+00:00\",\n        \"latitude\": \"18.990556716918945\",\n        \"longitude\": \"77.75897979736328\",\n        \"start_latitude\": \"19.02241516113281\",\n        \"start_longitude\": \"77.75370025634766\",\n        \"start_time_stamp\": \"2021-10-23 07:42:05+00:00\",\n        \"time_stamp\": \"2021-10-23 14:29:04+00:00\"\n    },\n    \"25029\": {\n        \"end_latitude\": \"27.8779354095459\",\n        \"end_longitude\": \"76.06095886230469\",\n        \"end_time_stamp\": \"2021-10-23 14:25:25+00:00\",\n        \"latitude\": \"27.8779354095459\",\n        \"longitude\": \"76.06095886230469\",\n        \"start_latitude\": \"27.88550567626953\",\n        \"start_longitude\": \"76.26920318603516\",\n        \"start_time_stamp\": \"2021-10-23 12:29:56+00:00\",\n        \"time_stamp\": \"2021-10-23 14:25:25+00:00\"\n    },\n    \"device:20984\": {\n        \"device_fk_id\": \"20984\",\n        \"latitude\": \"21.61501693725586\",\n        \"longitude\": \"78.43660736083984\",\n        \"sts\": \"2021-10-23T12:30:15.19382Z\"\n    },\n    \"device:24809\": {\n        \"device_fk_id\": \"24809\",\n        \"latitude\": \"18.98970603942871\",\n        \"longitude\": \"77.75823211669922\",\n        \"sts\": \"2021-10-23T12:30:03.385959Z\"\n    },\n    \"device:25029\": {\n        \"device_fk_id\": \"25029\",\n        \"latitude\": \"27.88550567626953\",\n        \"longitude\": \"76.26920318603516\",\n        \"sts\": \"2021-10-23T12:30:03.805833Z\"\n    },\n    \"device:6888\": {\n        \"device_fk_id\": \"6888\",\n        \"latitude\": \"19.73909568786621\",\n        \"longitude\": \"76.18146514892578\",\n        \"sts\": \"2021-10-23T12:30:51.074844Z\"\n    }\n}"
+				}
+			]
+		}
+	]
+}
