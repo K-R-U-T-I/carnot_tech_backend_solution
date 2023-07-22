@@ -1,0 +1,38 @@
+Python script that sets up a local Redis cache server, reads data from an CSV file, processes and stores the data in Redis, and then creates several API endpoints using Flask to retrieve information from the Redis cache.
+
+Documentation of the code:
+
+1. Import Statements:
+The script imports necessary Python modules, including json, os, datetime, pandas, redis, and Flask.
+
+2. Redis Setup and Data Storage:
+Redis client is created and connected to a local Redis cache server (host: localhost, port: 6379, db: 0).
+
+The function store_latest_data_in_redis reads data from a CSV file (Raw Data - Backend Developer. (1).csv), sorts it based on the time_stamp column, and stores the latest location data for each device ID in the Redis cache.
+Each device ID is used as the key in Redis, and the values stored include the latest location data as well as the start and end locations with their corresponding timestamps.
+
+3. API Endpoints using Flask:
+Flask application is created, and several API endpoints are defined to retrieve data from the Redis cache.
+
+The following API endpoints are provided:
+/api/latest_info/<int:device_id>: Retrieves the latest information (start and end timestamps, start and end locations) for a specific device ID.
+/api/start_end_location/<int:device_id>: Retrieves the start and end locations for a specific device ID.
+/api/all_location_points: Retrieves all location points for a device within a given time range (specified by start_time and end_time query parameters).
+/api/all_data: Retrieves all data stored in the Redis cache, excluding the location data (only start and end timestamps and locations are included).
+
+The script reads the data from the CSV file and stores the latest information in the Redis cache using the store_latest_data_in_redis function.
+Flask application is then started, and the API endpoints become accessible on the local server at http://localhost:8000/.
+
+
+To host the API endpoints using Docker,
+
+Step 1: Create a Dockerfile
+
+Step 2: Build the Docker Image
+docker build -t carnot_app .
+
+Step 3: Run the Docker Container
+docker run -d -p 8000:8000 carnot_app
+
+
+
